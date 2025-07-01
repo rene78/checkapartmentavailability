@@ -1,5 +1,5 @@
 # Check website for keyword
-This script checks a website for certain keywords twice a day. If the keyword appears on the website an e-mail will be sent out to a predefined address. This Node.js script has been written to work on Microsofts Functions-as-a-Service (FaaS) offering, specifically [Azure Functions Timer Trigger](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer). Rewriting it for a vanilla Node.js backend shouldn't require much effort though. Just implement a ```setIntervall()``` method to call the function at specific time intervalls.
+This script checks a website for certain keywords twice a day. If the keyword appears on the website an e-mail will be sent out to a predefined address. This Node.js script has been written to work on Microsofts Functions-as-a-Service (FaaS) offering, specifically [Azure Functions Timer Trigger](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer). Rewriting it for a vanilla Node.js backend shouldn't require much effort though. You could use a scheduler like ```node-cron``` to call your function at specific times.
 
 # Configuration Variables
 To customize the functionality, you may adjust the following private variables in a ```local.settings.json``` file:
