@@ -40,6 +40,7 @@ app.timer('checkApartmentAvailability', {
             function findKeywords() {
                 const foundKw = [];
                 for (let i = 0; i < keywords.length; i++) {
+                    // We use .toLowerCase() to make the search case-insensitive
                     if (htmlContent.toLowerCase().includes(keywords[i].toLowerCase())) {
                         foundKw.push(keywords[i]);
                     }
@@ -50,9 +51,8 @@ app.timer('checkApartmentAvailability', {
             const foundKeywordsArray = findKeywords();
             // context.log(foundKeywordsArray);
 
-            // We use .toLowerCase() to make the search case-insensitive
+            // If the array is not empty send out e-mail
             if (foundKeywordsArray.length > 0) {
-                context.log("this code does not get executed");
                 context.log(`SUCCESS: Keywords "${foundKeywordsArray.join(", ")}" found on the page!`);
 
                 // --- Step 3: Send the notification email ---
